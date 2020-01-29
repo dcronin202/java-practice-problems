@@ -86,7 +86,13 @@ public class Main {
     // should return a non-null string of the shortest word. If you find multiple words that are the same length
     // you should return the first occurence of it
     static String findShortestWord(List<String> listOfWords) {
-        return "n/a";
+        String shortestWord = listOfWords.get(0);
+        for (int i = 0; i < listOfWords.size(); i++) {
+            if (listOfWords.size() >= 0 && listOfWords.get(i).length() < shortestWord.length()) {
+                shortestWord = listOfWords.get(i);
+            }
+        }
+        return shortestWord;
     }
 
     static int findMaxNumber(int[] numbers) {
