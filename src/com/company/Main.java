@@ -74,7 +74,13 @@ public class Main {
 
     static int getNumCharsInString(char charToSearchFor, String string) {
         // count the number of characters charToSearchFor in the string string
-        return -1;
+        int charCount = 0;
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == charToSearchFor) {
+                charCount++;
+            }
+        }
+        return charCount;
     }
 
     // should return a non-null string of the shortest word. If you find multiple words that are the same length
