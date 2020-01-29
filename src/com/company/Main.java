@@ -98,11 +98,23 @@ public class Main {
     }
 
     static int findMaxNumber(int[] numbers) {
-        return -1;
+        int maxNumber = numbers[0];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] > maxNumber) {
+                maxNumber = numbers[i];
+            }
+        }
+        return maxNumber;
     }
 
     static int findMinNumber(int[] numbers) {
-        return -1;
+        int minNumber = numbers[0];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < minNumber) {
+                minNumber = numbers[i];
+            }
+        }
+        return minNumber;
     }
 
     static int findNumberOfBooks(List<PageCollection> collection) {
