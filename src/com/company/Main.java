@@ -25,12 +25,12 @@ public class Main {
         System.out.println("Expected: Dan, My Output: "+ findShortestWord(list));
 
         ArrayList<String> listTwo = new ArrayList<String>();
-        list.add("Heather");
-        list.add("Tom");
-        list.add("Ellie");
-        list.add("Dan");
-        list.add("Terence");
-        list.add("Marsha");
+        listTwo.add("Heather");
+        listTwo.add("Tom");
+        listTwo.add("Ellie");
+        listTwo.add("Dan");
+        listTwo.add("Terence");
+        listTwo.add("Marsha");
         System.out.println("Expected: Tom, My Output: "+ findShortestWord(listTwo));
 
 
@@ -88,7 +88,9 @@ public class Main {
     static String findShortestWord(List<String> listOfWords) {
         String shortestWord = listOfWords.get(0);
         for (int i = 0; i < listOfWords.size(); i++) {
-            if (listOfWords.size() >= 0 && listOfWords.get(i).length() < shortestWord.length()) {
+            if (listOfWords.size() == 0) {
+                shortestWord = "";
+            } else if (listOfWords.size() > 0 && listOfWords.get(i).length() < shortestWord.length()) {
                 shortestWord = listOfWords.get(i);
             }
         }
