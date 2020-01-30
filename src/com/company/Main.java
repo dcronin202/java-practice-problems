@@ -70,6 +70,8 @@ public class Main {
         List<Article> foxNewsArticles = findAllArticlesBySource(NewsSource.FOX, pageCollections);
         System.out.println("--Fox News Article list size-- Expected = 0, output = "+espnArticles.size());
 
+        // TODO: Add a palindrome problem
+
     }
 
     static int getNumCharsInString(char charToSearchFor, String string) {
@@ -118,11 +120,23 @@ public class Main {
     }
 
     static int findNumberOfBooks(List<PageCollection> collection) {
-        return -1;
+        int numberOfBooks = 0;
+        for (int i = 0; i < collection.size(); i++) {
+            if (collection.get(i) instanceof Book) {
+                numberOfBooks++;
+            }
+        }
+        return numberOfBooks;
     }
 
     static int findNumberOfArticles(List<PageCollection> collection) {
-        return -1;
+        int numberOfArticles = 0;
+        for (int i = 0; i < collection.size(); i++) {
+            if (collection.get(i) instanceof Article) {
+                numberOfArticles++;
+            }
+        }
+        return numberOfArticles;
     }
 
     static List<Book> findAllBooks(List<PageCollection> collection) {
